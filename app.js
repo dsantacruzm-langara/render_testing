@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-const PORT = 4590;
 
+app.listen(process.env.PORT || 3000)
 
 //Settings to connect to MongoDB
 const { MongoClient} = require('mongodb');
@@ -9,10 +9,6 @@ const uri = "mongodb+srv://tieinuser1:tieinmongo01@testcluster.ryzz4av.mongodb.n
 const client = new MongoClient(uri);
 
 app.use(express.json());
-
-app.listen(PORT, () => {
-  console.log(`it is listening to ${PORT}`);
-});
 
 app.get("/student", (req, res) => {
 
