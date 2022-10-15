@@ -10,6 +10,12 @@ const client = new MongoClient(uri);
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+
+    res.status(200).send("Hello intruder!");
+  
+});
+
 app.get("/student", (req, res) => {
 
   //Action when connected to MongoDB
