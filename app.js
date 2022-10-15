@@ -16,6 +16,12 @@ app.get("/", (req, res) => {
   
 });
 
+app.get("/test", (req, res) => {
+
+  res.status(200).send("Testing Message");
+
+});
+
 app.get("/student", (req, res) => {
 
   //Action when connected to MongoDB
