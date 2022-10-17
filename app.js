@@ -23,7 +23,7 @@ app.get("/student", (req, res) => {
   //Action when connected to MongoDB
   client.connect(async (err) => {
     const collection = client.db("TestDB1").collection("Students");
-    const student = await collection.find({});
+    const student = await collection.find({}).toArray();
     client.close();
 
     res.status(200).send(student);
@@ -32,7 +32,7 @@ app.get("/student", (req, res) => {
 
 app.get("/student/:studentId", (req, res) => {
 
-  const { studentId } = 
+  const { studentId } = req.params;
 
   //Action when connected to MongoDB
   client.connect(async (err) => {
